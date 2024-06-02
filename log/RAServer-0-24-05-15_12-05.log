@@ -1,0 +1,33 @@
+24-05-15 12:05:24.957 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+24-05-15 12:05:28.716 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+24-05-15 12:05:29.050 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 293 ms. Found 5 JPA repository interfaces.
+24-05-15 12:05:31.550 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 2448 (http)
+24-05-15 12:05:31.576 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-2448"]
+24-05-15 12:05:31.583 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+24-05-15 12:05:31.591 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+24-05-15 12:05:31.762 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+24-05-15 12:05:31.763 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6304 ms
+24-05-15 12:05:32.032 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+24-05-15 12:05:32.256 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@2c60ce47
+24-05-15 12:05:32.263 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+24-05-15 12:05:32.453 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+24-05-15 12:05:32.455 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+24-05-15 12:05:32.455 [main] INFO  o.f.c.i.license.VersionPrinter - 
+24-05-15 12:05:32.500 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:sqlite:./src/main/resources/db/server.db (SQLite 3.44)
+24-05-15 12:05:32.589 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.047s)
+24-05-15 12:05:32.607 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "main": 3
+24-05-15 12:05:32.613 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "main" is up to date. No migration necessary.
+24-05-15 12:05:32.845 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+24-05-15 12:05:33.068 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+24-05-15 12:05:33.249 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+24-05-15 12:05:34.647 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+24-05-15 12:05:40.829 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+24-05-15 12:05:40.841 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+24-05-15 12:05:42.213 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+24-05-15 12:05:43.458 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+24-05-15 12:05:44.269 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@59294447, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1377af49, org.springframework.security.web.context.SecurityContextHolderFilter@cf0e8b4, org.springframework.security.web.header.HeaderWriterFilter@5d6de24e, org.springframework.web.filter.CorsFilter@1b3639a1, org.springframework.security.web.authentication.logout.LogoutFilter@648ec9f4, com.inkronsane.ReadArticlesServer.security.JwtAuthFilter@7d31fb6c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e7245da, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54422189, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59df8444, org.springframework.security.web.session.SessionManagementFilter@2889d997, org.springframework.security.web.access.ExceptionTranslationFilter@5f8c319, org.springframework.security.web.access.intercept.AuthorizationFilter@5a720cdf]
+24-05-15 12:05:45.259 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-2448"]
+24-05-15 12:05:45.349 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 2448 (http) with context path ''
+24-05-15 12:05:57.137 [http-nio-2448-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-05-15 12:05:57.137 [http-nio-2448-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+24-05-15 12:05:57.139 [http-nio-2448-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms

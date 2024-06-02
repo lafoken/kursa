@@ -1,0 +1,2 @@
+24-05-11 20:59:55.557 [http-nio-2448-exec-9] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 19, SQLState: null
+24-05-11 20:59:55.572 [http-nio-2448-exec-9] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - [SQLITE_CONSTRAINT_UNIQUE] A UNIQUE constraint failed (UNIQUE constraint failed: articles.title)
