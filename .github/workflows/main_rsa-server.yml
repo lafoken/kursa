@@ -9,9 +9,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    fail-fast: false  # Enable debugging
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set permissions for gradlew
+        run: chmod +x gradlew
 
       - name: Set up Java version
         uses: actions/setup-java@v1
@@ -55,4 +59,4 @@ jobs:
         with:
           app-name: 'rsa-server'
           slot-name: 'Production'
-          package: 'java-app/*.jar'
+
