@@ -4,17 +4,18 @@ import com.inkronsane.ReadArticlesServer.dto.UserDto;
 import com.inkronsane.ReadArticlesServer.entity.*;
 import java.util.*;
 import org.mapstruct.*;
-
-@Mapper(componentModel = "spring")
 /**
  * Mapping class
  * This class is used for more convenient mapping
  * Author: Hybalo Oleksandr
  * Date: 2024|05|13
  */
+@Mapper(componentModel = "spring")
 public interface UserMapper {
 
    @Mapping(target = "id", ignore = true)
+   @Mapping(target = "articles", ignore = true)
+   @Mapping(target = "comments", ignore = true)
    @Mapping(source = "role", target = "roles", qualifiedByName = "convertStringToRole")
    User mapToEntity(UserDto userDto);
 

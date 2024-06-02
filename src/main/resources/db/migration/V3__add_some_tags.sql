@@ -1,3 +1,3 @@
-INSERT INTO tags(name)
+INSERT INTO tags (name)
 VALUES ('CAT'),
-       ('NOT_CAT')
+       ('NOT_CAT');

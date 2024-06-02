@@ -1,8 +1,9 @@
 CREATE TABLE roles
 (
-    id   INTEGER PRIMARY KEY,
+    id   SERIAL PRIMARY KEY,
     name VARCHAR(20) NOT NULL
 );
+
 CREATE TABLE user_role
 (
     user_id INTEGER NOT NULL,
@@ -11,6 +12,7 @@ CREATE TABLE user_role
     FOREIGN KEY (user_id) REFERENCES users (id),
     FOREIGN KEY (role_id) REFERENCES roles (id)
 );
-INSERT INTO roles(name)
+
+INSERT INTO roles (name)
 VALUES ('ADMIN'),
        ('USER');

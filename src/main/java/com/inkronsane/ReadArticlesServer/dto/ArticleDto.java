@@ -27,5 +27,4 @@ public class ArticleDto {
    private String author;
    private Long authorId;
    private Set<String> tags;
-   private Set<CommentDto> comments;
 }

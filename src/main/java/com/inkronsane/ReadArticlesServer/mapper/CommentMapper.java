@@ -5,16 +5,15 @@ import com.inkronsane.ReadArticlesServer.dto.*;
 import com.inkronsane.ReadArticlesServer.entity.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-
-@Mapper(
-  componentModel = "spring",
-  uses = {ArticleMapper.class, UserMapper.class})
 /**
  * Mapping class
  * This class is used for more convenient mapping
  * Author: Hybalo Oleksandr
  * Date: 2024|05|13
  */
+@Mapper(
+  componentModel = "spring",
+  uses = {ArticleMapper.class, UserMapper.class})
 public interface CommentMapper {
 
    @Mapping(target = "id", ignore = true)

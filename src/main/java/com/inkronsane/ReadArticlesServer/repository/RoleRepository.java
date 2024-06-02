@@ -11,8 +11,9 @@ import org.springframework.stereotype.*;
  * Author: Hybalo Oleksandr
  * Date: 2024|05|13
  */
-@SuppressWarnings("JpaQlInspection")
 @Repository
+@SuppressWarnings("JpaQlInspection")
+
 public interface RoleRepository extends JpaRepository<Role, Long> {
    Optional<Role> findRoleByName(String name);
 }

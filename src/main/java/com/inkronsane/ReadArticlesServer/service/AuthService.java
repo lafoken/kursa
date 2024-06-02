@@ -38,7 +38,6 @@ public class AuthService {
    private CacheManager cacheManager;
    @Autowired
    private Validator userValidator;
-
    /**
     * Registers a new user based on the given request.
     *
@@ -154,9 +153,9 @@ public class AuthService {
             return response;
          }
       } else {
-         code = generateVerificationCode();
-         cacheEmailCode(registrationRequest.getDto().getEmail(), code);
-         emailSenderService.sendRegistrationEmail(registrationRequest.getDto().getEmail(), code);
+         int sendedCode = generateVerificationCode();
+         emailSenderService.sendRegistrationEmail(registrationRequest.getDto().getEmail(), sendedCode);
+         cacheEmailCode(registrationRequest.getDto().getEmail(), sendedCode);
          response.setStatusCode(200);
          response.setMessage("Code was sent.");
       }

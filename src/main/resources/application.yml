@@ -1,48 +1,46 @@
 server:
   port: 2448
+
 spring:
-  application:
-    name: ReadArticlesServer
+  application: ReadArticlesServer
   datasource:
-    url: jdbc:sqlite:./src/main/resources/db/server.db
-    driverClassName: org.sqlite.JDBC
+    url: jdbc:postgresql://rsa-p.postgres.database.azure.com:5432/postgres?&sslmode=require
+    username: inkronsane
+    password: sahsayter72!
+    driverClassName:  org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
   jpa:
-    database-platform: org.hibernate.community.dialect.SQLiteDialect
     show-sql: true
-#    properties:
-#      hibernate:
-#        cache:
-#          use_second_level_cache: true
-#          region:
-#            factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
-  data:
-    jdbc:
-      repositories:
-        enabled: false
+    database-platform: org.hibernate.dialect.SQLServerDialect
+
   mail:
     host: smtp.gmail.com
     port: 587
-    username: your_mail
-    password: your_password
+    username: keichirosanazaki@gmail.com
+    password: nwnfanjtrbgptzps
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
+
   cache:
     cache-names: VerificationCodes
     type: caffeine
     caffeine:
       spec: expireAfterWrite=1m
+
   flyway:
     enabled: true
     locations: classpath:db/migration
     datasource:
-      url: jdbc:sqlite:./src/main/resources/db/server.db
-      driverClassName: org.sqlite.JDBC
+      url: jdbc:postgresql://rsa-p.postgres.database.azure.com:5432/postgres?&sslmode=require
+      username: inkronsane
+      password: sahsayter72!
+      driverClassName:  org.postgresql.Driver
+
 logging:
   level:
     com:
