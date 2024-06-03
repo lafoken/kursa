@@ -2,8 +2,8 @@ server:
   port: 2448
 
 spring:
-  main:
-    allow-circular-references: true
+#  main:
+#    allow-circular-references: true
   application: ReadArticlesServer
   datasource:
     url: jdbc:postgresql://rsa-p.postgres.database.azure.com:5432/postgres?&sslmode=require
@@ -15,8 +15,9 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    defer-datasource-initialization: false
+      ddl-auto: update
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    defer-datasource-initialization: false
 
   mail:
     host: smtp.gmail.com
@@ -38,8 +39,9 @@ spring:
 
   flyway:
     depends-on: entityManagerFactory
-#    enabled: true
-#    locations: classpath:db/migration
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
 
 logging:
   level:

@@ -3,6 +3,7 @@ package com.inkronsane.ReadArticlesServer.service;
 import com.inkronsane.ReadArticlesServer.repository.*;
 import com.inkronsane.ReadArticlesServer.security.*;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.context.annotation.*;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.*;
@@ -16,7 +17,7 @@ import org.springframework.transaction.annotation.*;
  * Date: 2024|05|13
  */
 public class CustomUserDetailsService implements UserDetailsService {
-
+@Lazy
    @Autowired
    private UserRepository userRepository;
 
