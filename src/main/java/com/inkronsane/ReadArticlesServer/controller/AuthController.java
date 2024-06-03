@@ -1,6 +1,5 @@
 package com.inkronsane.ReadArticlesServer.controller;
 
-
 import com.inkronsane.ReadArticlesServer.payload.*;
 import com.inkronsane.ReadArticlesServer.service.*;
 import org.springframework.beans.factory.annotation.*;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class AuthController {
 
    @Autowired
@@ -64,4 +63,3 @@ public class AuthController {
       return ResponseEntity.ok(authService.refreshToken(refreshTokenRequest));
    }
 }
-
