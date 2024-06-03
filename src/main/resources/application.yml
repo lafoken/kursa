@@ -39,7 +39,7 @@ spring:
       url: jdbc:postgresql://rsa-p.postgres.database.azure.com:5432/postgres?&sslmode=require
       username: inkronsane
       password: sahsayter72!
-      driverClassName:  org.postgresql.Driver
+      driverClassName: org.postgresql.Driver
 
 logging:
   level:
