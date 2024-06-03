@@ -1,9 +1,11 @@
 package com.inkronsane.ReadArticlesServer.service;
 
 import com.inkronsane.ReadArticlesServer.entity.User;
+import com.inkronsane.ReadArticlesServer.security.*;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import java.util.*;
+import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -37,7 +39,7 @@ public class JwtService {
     * @param userDetails the user object for which the token is generated
     * @return JWT token
     */
-   public String generateToken(User userDetails) {
+   public String generateToken(CustomUserDetails userDetails) {
       return Jwts.builder()
         .subject(userDetails.getUsername())
         .issuedAt(new Date(System.currentTimeMillis()))
@@ -53,7 +55,7 @@ public class JwtService {
     * @param userDetails the user object for which the token is generated
     * @return the updated JWT token
     */
-   public String generateRefreshToken(HashMap<String, Object> claims, User userDetails) {
+   public String generateRefreshToken(HashMap<String, Object> claims, CustomUserDetails userDetails) {
       return Jwts.builder()
         .claims(claims)
         .subject(userDetails.getUsername())
@@ -85,7 +87,7 @@ public class JwtService {
     * @param userDetails the user object
     * @return true if the token is valid, false otherwise
     */
-   public boolean isTokenValid(String token, User userDetails) {
+   public boolean isTokenValid(String token, CustomUserDetails userDetails) {
       final String username = extractUsername(token);
       return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
    }

@@ -48,6 +48,11 @@ public class CustomUserDetails implements UserDetails {
       return user.getUsername();
    }
 
+
+   public Long getId(){
+      return user.getId();
+   }
+
    /**
     * Checks whether the user account has expired.
     *

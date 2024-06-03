@@ -12,6 +12,7 @@ import lombok.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.context.*;
+import org.springframework.security.core.userdetails.*;
 import org.springframework.security.web.authentication.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.filter.*;
@@ -20,8 +21,10 @@ import org.springframework.web.filter.*;
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
 
+   @Autowired
    private final JwtService jwtService;
-   private final UserRepository userService;
+   @Autowired
+   private final CustomUserDetailsService userService;
 
    @Override
    protected void doFilterInternal(
@@ -38,13 +41,13 @@ public class JwtAuthFilter extends OncePerRequestFilter {
       }
       jwt = authHeader.substring(7);
       username = jwtService.extractUsername(jwt);
-      if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-         User userDetails = userService.findByUsername(username).orElseThrow();
+      if (username != null || SecurityContextHolder.getContext().getAuthentication() == null) {
+         CustomUserDetails userDetails = userService.loadUserByUsername(username);
          if (jwtService.isTokenValid(jwt, userDetails)) {
             SecurityContext securityContext = SecurityContextHolder.createEmptyContext();
             UsernamePasswordAuthenticationToken token =
               new UsernamePasswordAuthenticationToken(
-                userDetails.getId(), null, userDetails.getRoles());
+                userDetails.getId(), null, userDetails.getAuthorities());
             token.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             securityContext.setAuthentication(token);
             SecurityContextHolder.setContext(securityContext);

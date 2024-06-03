@@ -32,6 +32,8 @@ public class AuthService {
    private PasswordEncoder passwordEncoder;
    @Autowired
    private AuthenticationManager authenticationManager;
+@Autowired
+private CustomUserDetailsService customUserDetailsService;
    @Autowired
    private EmailSenderService emailSenderService;
    @Autowired
@@ -84,7 +86,8 @@ public class AuthService {
            )
          );
          // Get the user and generate the access token
-         var user = userService.getTrueUserByUsername(signinRequest.getDto().getUsername());
+//         var user = userService.getTrueUserByUsername(signinRequest.getDto().getUsername());
+         var user = customUserDetailsService.loadUserByUsername(signinRequest.getDto().getUsername());
          var jwt = jwtService.generateToken(user);
          var refreshToken = jwtService.generateRefreshToken(new HashMap<>(), user);
          // Configure the response
@@ -110,7 +113,8 @@ public class AuthService {
       TokenPayload response = new TokenPayload();
       try {
          String username = jwtService.extractUsername(refreshTokenRequest.getRefreshToken());
-         var user = userService.getTrueUserByUsername(username);
+//         var user = userService.getTrueUserByUsername(username);
+         var user = customUserDetailsService.loadUserByUsername(username);
          if (jwtService.isTokenValid(refreshTokenRequest.getRefreshToken(), user)) {
             // Generation of a new access token
             String newToken = jwtService.generateToken(user);

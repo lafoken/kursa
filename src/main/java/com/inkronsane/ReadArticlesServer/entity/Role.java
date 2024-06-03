@@ -7,11 +7,11 @@ import lombok.*;
 import jakarta.persistence.Table;
 import org.springframework.security.core.*;
 @Data
-@Table
 @EqualsAndHashCode(of = "name")
-@Entity(name = "roles")
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "roles")
 /**
  * The essence of the role
  * This class is used to work with the database.
