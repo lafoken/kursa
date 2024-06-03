@@ -20,9 +20,7 @@ import org.springframework.web.filter.*;
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
 
-   @Autowired
    private final JwtService jwtService;
-   @Autowired
    private final UserRepository userService;
 
    @Override
@@ -40,7 +38,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
       }
       jwt = authHeader.substring(7);
       username = jwtService.extractUsername(jwt);
-      if (username != null || SecurityContextHolder.getContext().getAuthentication() == null) {
+      if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
          User userDetails = userService.findByUsername(username).orElseThrow();
          if (jwtService.isTokenValid(jwt, userDetails)) {
             SecurityContext securityContext = SecurityContextHolder.createEmptyContext();
