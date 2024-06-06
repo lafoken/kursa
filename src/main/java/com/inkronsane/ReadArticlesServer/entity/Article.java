@@ -2,8 +2,12 @@ package com.inkronsane.ReadArticlesServer.entity;
 
 
 import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Table;
 import java.util.*;
 import lombok.*;
+import org.hibernate.annotations.*;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -35,7 +39,7 @@ public class Article extends AuditableEntity<Long> implements Comparable<Article
    @JoinColumn(name = "author_id")
    private User author;
 
-   @ManyToMany(cascade = CascadeType.ALL)
+   @ManyToMany(cascade = CascadeType.REMOVE)
    @JoinTable(
      name = "article_tags",
      joinColumns = @JoinColumn(name = "article_id"),

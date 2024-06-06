@@ -175,7 +175,6 @@ public class ArticleService {
     * @param id the id of the article
     * @return a response that contains information about the result of the deletion
     */
-   @CacheEvict(cacheNames = "articles", key = "#id")
    public ArticlePayload delete(Long id) {
       ArticlePayload response = new ArticlePayload();
       try {
