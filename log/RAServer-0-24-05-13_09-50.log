@@ -1,6 +1,0 @@
-24-05-13 09:50:43.717 [http-nio-2448-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-24-05-13 09:50:43.719 [http-nio-2448-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-24-05-13 09:50:43.721 [http-nio-2448-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-24-05-13 09:50:49.621 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-24-05-13 09:50:49.623 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-24-05-13 09:50:49.625 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

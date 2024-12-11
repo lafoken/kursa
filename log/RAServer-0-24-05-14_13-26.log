@@ -1,3 +1,0 @@
-24-05-14 13:26:07.092 [http-nio-2448-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-24-05-14 13:26:07.100 [http-nio-2448-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-24-05-14 13:26:07.102 [http-nio-2448-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
